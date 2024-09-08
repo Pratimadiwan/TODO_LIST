@@ -1,0 +1,338 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding-top: 25px;
+  background-image: url('star.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+}
+
+/* Add fade-in animation to the container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffffcc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+  animation: fadeIn 1.5s ease-in-out; /* Apply fade-in animation */
+}
+
+.container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #007bff;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+  color: #007bff;
+  text-shadow: 2px 2px 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Input Field and Submit Button */
+input[type="text"] {
+  padding: 12px;
+  width: 85%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  transform: scale(1.02);
+}
+
+#search-input {
+  width: 95%;
+  margin: 0 auto;
+}
+
+button[type="submit"] {
+  background: none;
+  width: 42.5px;
+  height: 43px;
+  border: none;
+  outline: none;
+  /* background-color: white; */
+  color: #0c0c0c;
+  cursor: pointer;
+  /* box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); */
+}
+
+button[type="submit"]:hover {
+  background-color: #070707;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Todo List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-3px);
+  border: 2px solid #007bff;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+/* Checkbox for marking tasks complete */
+.todo-checkbox {
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.todo-checkbox:checked {
+  transform: scale(1.1);
+  background-color: #080808;
+}
+
+/* Task Text */
+.todo-task {
+  flex-grow: 1;
+  font-size: 18px;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.todo-task.completed {
+  color: #888;
+}
+
+/* Buttons inside Todo Items */
+.filters button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+button.delete {
+  background-color: #dc3545;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}
+
+/* button.edit {
+  background-color: #ffc107;
+}
+
+button.edit:hover {
+  background-color: #e0a800;
+} */
+
+/* Icons for Buttons */
+button i {
+  font-size: 16px;
+}
+
+button.edit-btn {
+  color: #3498db;
+}
+
+button.delete-btn {
+  color: #e74c3c;
+}
+
+/* Filter Buttons */
+.filters {
+  margin: 20px 0;
+}
+
+.filters button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #2a2a2b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.filters button:hover {
+  background-color: #080808;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 100px); /* Adjust width to account for button */
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 60px); /* Adjust width to account for button */
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    width: 40px;
+    height: 40px;
+  }
+
+  .filters button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filters button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure that todo-list items fit on small screens */
+@media (max-width: 480px) {
+  ul {
+    height: auto; /* Allow list to grow based on content */
+  }
+
+  li {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+
+/* Progress Container */
+.progress-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Circular Progress */
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: gray;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-progress span {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Horizontal Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0;
+  background-color: #5b635d;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
